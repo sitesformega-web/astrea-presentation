@@ -60,3 +60,28 @@
     outline: 2px solid var(--color-hover);
     outline-offset: 3px;
 }
+
+.presentation-title,
+.presentation-subtitle,
+.presentation-paragraph {
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+.presentation-title {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-title);
+}
+
+.presentation-subtitle {
+    font-size: var(--font-size-subtitle);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-subtitle);
+}
+
+.presentation-paragraph {
+    font-size: var(--font-size-paragraph);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-paragraph);
+}
