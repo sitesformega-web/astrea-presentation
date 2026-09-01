@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ASTREA™ — Presentation</title>
+    <meta
+        name="description"
+        content="ASTREA™ — Nuevas maneras de mostrarte, nuevas maneras de vender."
+    >
 
+    <title>ASTREA™</title>
+
+    <!-- Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -14,43 +21,125 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="./css/tokens.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css">
-    <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
-    <main class="component-lab">
+    <main class="presentation">
 
-        <nav class="presentation-nav" aria-label="Secciones de ASTREA">
+        <!-- ========================================
+             SLIDE 01 — HERO
+        ========================================= -->
 
-            <button
-                class="presentation-button is-active"
-                type="button"
-                aria-current="page"
+        <section
+            id="home"
+            class="slide slide--hero"
+            aria-label="ASTREA"
+        >
+
+            <div class="hero">
+                <h1 class="hero__title">
+                    ASTREA™
+                </h1>
+
+                <p class="hero__claim">
+                    Nuevas maneras de mostrarte,<br>
+                    nuevas maneras de vender.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             SLIDE 02
+        ========================================= -->
+
+        <section
+            id="slide-02"
+            class="slide slide--02"
+            aria-labelledby="slide-02-title"
+        >
+
+            <!-- Decorative layer -->
+
+            <div
+                class="slide-02__graphic"
+                aria-hidden="true"
             >
-                VITRINA ASTREA™
-            </button>
+                <img
+                    src="./assets/images/slide-02-element.png"
+                    alt=""
+                >
+            </div>
 
-            <button class="presentation-button" type="button">
-                PEDIDOS
-            </button>
 
-            <button class="presentation-button" type="button">
-                PRODUCTOS
-            </button>
+            <!-- Content layer -->
 
-            <button class="presentation-button" type="button">
-                CLIENTES
-            </button>
+            <div class="slide-02__content">
 
-        </nav>
+                <h2
+                    id="slide-02-title"
+                    class="presentation-title reveal reveal--01"
+                >
+                    Ordenar, mostrar<br>
+                    y vender.
+                </h2>
+
+                <p
+                    class="presentation-paragraph reveal reveal--02"
+                >
+                    Una estructura
+                    <strong>práctica y sencilla</strong>
+                    para la organización de tu negocio.
+                </p>
+
+                <div class="reveal reveal--03">
+
+                    <a
+                        class="presentation-button"
+                        href="#"
+                    >
+                        CONOCÉ MÁS
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Media layer -->
+
+            <div class="slide-02__media reveal reveal--media">
+
+                <img
+                    src="./assets/images/slide-02-main.png"
+                    alt="Presentación de ASTREA"
+                >
+
+            </div>
+
+
+            <!-- Navigation layer -->
+
+            <a
+                class="slide-navigator"
+                href="#home"
+                aria-label="Volver al inicio"
+            >
+                <img
+                    src="./assets/images/navigator.png"
+                    alt=""
+                >
+            </a>
+
+        </section>
 
     </main>
 
     <script src="./js/main.js"></script>
 
 </body>
+
 </html>
