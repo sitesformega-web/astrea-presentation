@@ -1,15 +1,36 @@
-const navigationButtons = document.querySelectorAll(
-    ".presentation-nav .presentation-button"
-);
+/* =========================================================
+   ASTREA™ PRESENTATION
+   Slide visibility
+   ========================================================= */
 
-navigationButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        navigationButtons.forEach((item) => {
-            item.classList.remove("is-active");
-            item.removeAttribute("aria-current");
-        });
+const animatedSlides = document.querySelectorAll(".slide:not(.slide--hero)");
 
-        button.classList.add("is-active");
-        button.setAttribute("aria-current", "page");
+const observerOptions = {
+    root: null,
+    threshold: 0.35
+};
+
+const slideObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) {
+            return;
+        }
+
+        entry.target.classList.add("is-visible");
+
+        /*
+         * La animación ocurre una sola vez.
+         * Una vez presentada la escena, dejamos de observarla.
+         */
+        slideObserver.unobserve(entry.target);
+
     });
+
+}, observerOptions);
+
+
+animatedSlides.forEach((slide) => {
+    slideObserver.observe(slide);
 });
