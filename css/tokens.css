@@ -1,0 +1,23 @@
+:root {
+    /* Typography */
+    --font-family-primary: "Quicksand", sans-serif;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
+    /* Surfaces */
+    --color-background: #f7f7f7;
+
+    /* Text */
+    --color-text-primary: #3d3d3d;
+
+    /* Interaction */
+    --color-gradient-start: #f04136;
+    --color-gradient-end: #b52866;
+    --color-hover: #fa3125;
+
+    /* Motion */
+    --transition-fast: 180ms ease;
+    --transition-medium: 250ms ease;
+}
