@@ -1,6 +1,6 @@
 /* =========================================================
    ASTREA™ PRESENTATION
-   Global System v0.3
+   Global System v0.4
    ========================================================= */
 
 
@@ -10,16 +10,12 @@
 
 :root {
 
-    /* Typography */
-
     --font-family: "Quicksand", sans-serif;
 
     --font-regular: 400;
     --font-medium: 500;
     --font-semibold: 600;
 
-
-    /* Colors */
 
     --color-background: #f7f7f7;
     --color-text: #3d3d3d;
@@ -30,8 +26,6 @@
     --color-hover: #fa3125;
 
 
-    /* Motion */
-
     --ease-out:
         cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -40,7 +34,6 @@
 
     --reveal-duration: 520ms;
     --media-duration: 580ms;
-
     --scene-duration: 700ms;
 
 }
@@ -61,7 +54,6 @@ html,
 body {
     width: 100%;
     height: 100%;
-
     margin: 0;
 }
 
@@ -86,14 +78,12 @@ body {
 
 img {
     display: block;
-
     max-width: 100%;
 }
 
 
 a {
     color: inherit;
-
     text-decoration: none;
 }
 
@@ -137,7 +127,6 @@ button {
     overflow: hidden;
 
     visibility: hidden;
-
     opacity: 0;
 
     pointer-events: none;
@@ -150,7 +139,6 @@ button {
     z-index: 20;
 
     visibility: visible;
-
     opacity: 1;
 
     pointer-events: auto;
@@ -176,7 +164,6 @@ button {
     font-weight: var(--font-semibold);
 
     line-height: 1.08;
-
     letter-spacing: -0.025em;
 }
 
@@ -201,8 +188,14 @@ button {
 
 
 /* =========================================================
-   6. PRESENTATION BUTTON
+   6. PRESENTATION BUTTON v1.0
    ========================================================= */
+
+/*
+ * DEFAULT
+ *
+ * Transparente, texto oscuro.
+ */
 
 .presentation-button {
     display: inline-flex;
@@ -214,8 +207,39 @@ button {
 
     padding: 0 20px;
 
+    border: 0;
     border-radius: 999px;
 
+    background: transparent;
+
+    color: var(--color-text);
+
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    font-weight: var(--font-semibold);
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background-position 250ms ease;
+}
+
+
+.presentation-button:hover {
+    color: var(--color-hover);
+}
+
+
+/*
+ * ACTIVE
+ *
+ * El mismo componente cambia de estado.
+ */
+
+.presentation-button.is-active {
     color: var(--color-white);
 
     background:
@@ -226,21 +250,13 @@ button {
         );
 
     background-size: 150% 100%;
-
-    font-size: 0.875rem;
-    font-weight: var(--font-semibold);
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-        background-position 250ms ease,
-        transform 180ms ease;
+    background-position: 0 0;
 }
 
 
-.presentation-button:hover {
+.presentation-button.is-active:hover {
+    color: var(--color-white);
+
     background-position: 100% 0;
 }
 
@@ -361,14 +377,10 @@ button {
 }
 
 
-/* Graphic entering from left */
-
 .slide-graphic--from-left {
     transform: translateX(-45px);
 }
 
-
-/* Graphic entering from right */
 
 .slide-graphic--from-right {
     transform: translateX(45px);
@@ -386,13 +398,6 @@ button {
 /* =========================================================
    10. PARALLAX
    ========================================================= */
-
-/*
- * El wrapper incorpora un pequeño bleed para evitar
- * descubrir bordes durante el movimiento del parallax.
- *
- * Los assets pueden permanecer exportados al ras.
- */
 
 .parallax-layer {
     --parallax-x: 0px;
@@ -414,8 +419,7 @@ button {
 
 
 /*
- * Compensación disponible para capas que necesiten
- * cubrir el bleed generado por el movimiento.
+ * Bleed para gráficos preparados al ras.
  */
 
 .parallax-layer > .slide-graphic {
@@ -430,15 +434,6 @@ button {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-
-    .parallax-layer {
-        transform: none !important;
-    }
-
-}
-
-
 /* =========================================================
    11. STANDARD CONTENT TRANSITION
    ========================================================= */
@@ -449,7 +444,6 @@ button {
     transform: translateY(-10px);
 
     transition-delay: 0ms !important;
-
     transition-duration: 240ms;
 }
 
@@ -458,15 +452,9 @@ button {
     opacity: 0;
 
     transition-delay: 0ms !important;
-
     transition-duration: 280ms;
 }
 
-
-/*
- * El siguiente slide entra mientras el anterior
- * todavía está terminando de salir.
- */
 
 .slide.is-entering {
     z-index: 30;
@@ -500,7 +488,6 @@ button {
     z-index: 10;
 
     visibility: visible;
-
     opacity: 1;
 }
 
