@@ -93,15 +93,11 @@
             aria-labelledby="slide-01-title"
         >
 
-            <!-- Background -->
-
             <div
                 class="slide-01__background"
                 aria-hidden="true"
             ></div>
 
-
-            <!-- Lighting overlay -->
 
             <div
                 class="slide-01__overlay"
@@ -109,24 +105,12 @@
             ></div>
 
 
-            <!--
-                Parallax Layer
-
-                Este wrapper maneja exclusivamente
-                el movimiento interactivo del gráfico.
-            -->
+            <!-- Hero graphic parallax -->
 
             <div
                 class="slide-01__graphic-parallax parallax-layer"
                 data-parallax="0.7"
             >
-
-                <!--
-                    Graphic Layer
-
-                    El elemento interno conserva
-                    su propia animación lateral + fade.
-                -->
 
                 <div
                     class="slide-01__graphic slide-graphic slide-graphic--from-right"
@@ -143,8 +127,6 @@
 
             </div>
 
-
-            <!-- Primary content -->
 
             <div class="slide-01__primary">
 
@@ -167,8 +149,6 @@
 
             </div>
 
-
-            <!-- Secondary content -->
 
             <p
                 class="slide-01__statement reveal"
@@ -197,18 +177,25 @@
             aria-hidden="true"
         >
 
-            <!-- Graphic -->
+            <!-- Graphic parallax -->
 
             <div
-                class="slide-02__graphic slide-graphic slide-graphic--from-right"
-                style="--graphic-delay: 80ms"
-                aria-hidden="true"
+                class="slide-02__graphic-parallax parallax-layer"
+                data-parallax="1"
             >
 
-                <img
-                    src="./assets/images/slide-02-element.png"
-                    alt=""
+                <div
+                    class="slide-02__graphic slide-graphic slide-graphic--from-right"
+                    style="--graphic-delay: 80ms"
+                    aria-hidden="true"
                 >
+
+                    <img
+                        src="./assets/images/slide-02-element.png"
+                        alt=""
+                    >
+
+                </div>
 
             </div>
 
@@ -254,17 +241,24 @@
             </div>
 
 
-            <!-- Media -->
+            <!-- Main image parallax -->
 
             <div
-                class="slide-02__media reveal reveal--media"
-                style="--reveal-delay: 460ms"
+                class="slide-02__media-parallax parallax-layer"
+                data-parallax="0.35"
             >
 
-                <img
-                    src="./assets/images/slide-02-main.png"
-                    alt=""
+                <div
+                    class="slide-02__media reveal reveal--media"
+                    style="--reveal-delay: 460ms"
                 >
+
+                    <img
+                        src="./assets/images/slide-02-main.png"
+                        alt=""
+                    >
+
+                </div>
 
             </div>
 
@@ -283,18 +277,25 @@
             aria-hidden="true"
         >
 
-            <!-- Graphic -->
+            <!-- Graphic parallax -->
 
             <div
-                class="slide-03__graphic slide-graphic slide-graphic--from-left"
-                style="--graphic-delay: 60ms"
-                aria-hidden="true"
+                class="slide-03__graphic-parallax parallax-layer"
+                data-parallax="0.8"
             >
 
-                <img
-                    src="./assets/images/slide-03-element.png"
-                    alt=""
+                <div
+                    class="slide-03__graphic slide-graphic slide-graphic--from-left"
+                    style="--graphic-delay: 60ms"
+                    aria-hidden="true"
                 >
+
+                    <img
+                        src="./assets/images/slide-03-element.png"
+                        alt=""
+                    >
+
+                </div>
 
             </div>
 
@@ -314,45 +315,52 @@
             </p>
 
 
-            <!-- Gallery -->
+            <!-- Gallery parallax -->
 
-            <div class="slide-03__gallery">
+            <div
+                class="slide-03__gallery-parallax parallax-layer"
+                data-parallax="0.35"
+            >
 
-                <div
-                    class="slide-03__image slide-03__image--low reveal reveal--media"
-                    style="--reveal-delay: 200ms"
-                >
+                <div class="slide-03__gallery">
 
-                    <img
-                        src="./assets/images/slide-02-main.png"
-                        alt=""
+                    <div
+                        class="slide-03__image slide-03__image--low reveal reveal--media"
+                        style="--reveal-delay: 200ms"
                     >
 
-                </div>
+                        <img
+                            src="./assets/images/slide-02-main.png"
+                            alt=""
+                        >
+
+                    </div>
 
 
-                <div
-                    class="slide-03__image slide-03__image--high reveal reveal--media"
-                    style="--reveal-delay: 320ms"
-                >
-
-                    <img
-                        src="./assets/images/slide-02-main.png"
-                        alt=""
+                    <div
+                        class="slide-03__image slide-03__image--high reveal reveal--media"
+                        style="--reveal-delay: 320ms"
                     >
 
-                </div>
+                        <img
+                            src="./assets/images/slide-02-main.png"
+                            alt=""
+                        >
+
+                    </div>
 
 
-                <div
-                    class="slide-03__image slide-03__image--low reveal reveal--media"
-                    style="--reveal-delay: 440ms"
-                >
-
-                    <img
-                        src="./assets/images/slide-02-main.png"
-                        alt=""
+                    <div
+                        class="slide-03__image slide-03__image--low reveal reveal--media"
+                        style="--reveal-delay: 440ms"
                     >
+
+                        <img
+                            src="./assets/images/slide-02-main.png"
+                            alt=""
+                        >
+
+                    </div>
 
                 </div>
 
