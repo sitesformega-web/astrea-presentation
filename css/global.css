@@ -480,3 +480,32 @@ button {
     }
 
 }
+
+/* =========================================================
+   PARALLAX
+   ========================================================= */
+
+.parallax-layer {
+    --parallax-x: 0px;
+    --parallax-y: 0px;
+
+    transform:
+        translate3d(
+            var(--parallax-x),
+            var(--parallax-y),
+            0
+        );
+
+    will-change: transform;
+
+    pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .parallax-layer {
+        transform: none !important;
+    }
+
+}
