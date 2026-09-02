@@ -12,7 +12,6 @@
 
     <title>ASTREA™</title>
 
-    <!-- Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -28,33 +27,69 @@
 
     <main class="presentation">
 
-        <!-- ========================================
+        <!-- ==================================================
              SLIDE 01 — HERO
-        ========================================= -->
+        =================================================== -->
 
         <section
             id="home"
-            class="slide slide--hero"
-            aria-label="ASTREA"
+            class="slide slide--01"
+            aria-labelledby="slide-01-title"
         >
 
-            <div class="hero">
-                <h1 class="hero__title">
-                    ASTREA™
+            <!-- Background -->
+            <div class="slide-01__background" aria-hidden="true"></div>
+
+            <!-- Lighting / readability overlay -->
+            <div class="slide-01__overlay" aria-hidden="true"></div>
+
+            <!-- Decorative graphic -->
+            <div class="slide-01__graphic" aria-hidden="true">
+                <img
+                    src="./assets/images/slide-01-element.png"
+                    alt=""
+                >
+            </div>
+
+            <!-- Left content -->
+            <div class="slide-01__primary">
+
+                <img
+                    class="slide-01__logo reveal"
+                    style="--reveal-delay: 120ms"
+                    src="./assets/images/ASTREA LOGO.png"
+                    alt="ASTREA"
+                >
+
+                <h1
+                    id="slide-01-title"
+                    class="slide-01__claim reveal"
+                    style="--reveal-delay: 240ms"
+                >
+                    Tu comercio,<br>
+                    más simple.
                 </h1>
 
-                <p class="hero__claim">
-                    Nuevas maneras de mostrarte,<br>
-                    nuevas maneras de vender.
-                </p>
             </div>
+
+            <!-- Right content -->
+            <p
+                class="slide-01__statement reveal"
+                style="--reveal-delay: 380ms"
+            >
+                Plataforma de ventas<br>
+                <strong>
+                    ligera, modular y<br>
+                    adaptable.
+                </strong>
+            </p>
 
         </section>
 
 
-        <!-- ========================================
+        <!-- ==================================================
              SLIDE 02
-        ========================================= -->
+        =================================================== -->
 
         <section
             id="slide-02"
@@ -62,67 +97,141 @@
             aria-labelledby="slide-02-title"
         >
 
-            <!-- Decorative layer -->
-
-            <div
-                class="slide-02__graphic"
-                aria-hidden="true"
-            >
+            <!-- Decorative graphic -->
+            <div class="slide-02__graphic slide-graphic" aria-hidden="true">
                 <img
                     src="./assets/images/slide-02-element.png"
                     alt=""
                 >
             </div>
 
-
-            <!-- Content layer -->
-
+            <!-- Content -->
             <div class="slide-02__content">
 
                 <h2
                     id="slide-02-title"
-                    class="presentation-title reveal reveal--01"
+                    class="presentation-title reveal"
+                    style="--reveal-delay: 100ms"
                 >
                     Ordenar, mostrar<br>
                     y vender.
                 </h2>
 
                 <p
-                    class="presentation-paragraph reveal reveal--02"
+                    class="presentation-paragraph reveal"
+                    style="--reveal-delay: 220ms"
                 >
                     Una estructura
                     <strong>práctica y sencilla</strong>
                     para la organización de tu negocio.
                 </p>
 
-                <div class="reveal reveal--03">
-
+                <div
+                    class="reveal"
+                    style="--reveal-delay: 340ms"
+                >
                     <a
                         class="presentation-button"
                         href="#"
                     >
-                        CONOCÉ MÁS
+                        CONECTA NEGOCIO
                     </a>
-
                 </div>
 
             </div>
 
-
-            <!-- Media layer -->
-
-            <div class="slide-02__media reveal reveal--media">
-
+            <!-- Media -->
+            <div
+                class="slide-02__media reveal reveal--media"
+                style="--reveal-delay: 460ms"
+            >
                 <img
                     src="./assets/images/slide-02-main.png"
-                    alt="Presentación de ASTREA"
+                    alt=""
                 >
+            </div>
+
+            <!-- Navigator -->
+            <a
+                class="slide-navigator"
+                href="#home"
+                aria-label="Volver al inicio"
+            >
+                <img
+                    src="./assets/images/navigator.png"
+                    alt=""
+                >
+            </a>
+
+        </section>
+
+
+        <!-- ==================================================
+             SLIDE 03
+        =================================================== -->
+
+        <section
+            id="slide-03"
+            class="slide slide--03"
+            aria-label="Plataforma de ventas adaptable"
+        >
+
+            <!-- Decorative graphic -->
+            <div class="slide-03__graphic slide-graphic" aria-hidden="true">
+                <img
+                    src="./assets/images/slide-03-element.png"
+                    alt=""
+                >
+            </div>
+
+            <!-- Statement -->
+            <p
+                class="slide-03__statement reveal"
+                style="--reveal-delay: 100ms"
+            >
+                Plataforma de ventas<br>
+                <strong>
+                    ligera, modular y<br>
+                    adaptable.
+                </strong>
+            </p>
+
+            <!-- Gallery -->
+            <div class="slide-03__gallery">
+
+                <div
+                    class="slide-03__image slide-03__image--low reveal reveal--media"
+                    style="--reveal-delay: 200ms"
+                >
+                    <img
+                        src="./assets/images/slide-02-main.png"
+                        alt=""
+                    >
+                </div>
+
+                <div
+                    class="slide-03__image slide-03__image--high reveal reveal--media"
+                    style="--reveal-delay: 320ms"
+                >
+                    <img
+                        src="./assets/images/slide-02-main.png"
+                        alt=""
+                    >
+                </div>
+
+                <div
+                    class="slide-03__image slide-03__image--low reveal reveal--media"
+                    style="--reveal-delay: 440ms"
+                >
+                    <img
+                        src="./assets/images/slide-02-main.png"
+                        alt=""
+                    >
+                </div>
 
             </div>
 
-
-            <!-- Navigation layer -->
-
+            <!-- Navigator -->
             <a
                 class="slide-navigator"
                 href="#home"
