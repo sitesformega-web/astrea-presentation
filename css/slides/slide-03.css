@@ -9,16 +9,29 @@
 
 
 /* =========================================================
-   GRAPHIC
-   1350 × 1080 reference layer
+   GRAPHIC — PARALLAX WRAPPER
    ========================================================= */
 
-.slide-03__graphic {
+.slide-03__graphic-parallax {
+    position: absolute;
+
     z-index: 10;
 
     top: 0;
     left: 0;
 
+    height: 100%;
+}
+
+
+/* =========================================================
+   GRAPHIC
+   ========================================================= */
+
+.slide-03__graphic {
+    position: relative;
+
+    width: auto;
     height: 100%;
 }
 
@@ -65,10 +78,17 @@
 
 
 /* =========================================================
-   GALLERY
+   GALLERY — PARALLAX WRAPPER
    ========================================================= */
 
-.slide-03__gallery {
+/*
+ * La galería completa se mueve como una única unidad.
+ *
+ * Esto preserva la relación compositiva entre
+ * las tres imágenes.
+ */
+
+.slide-03__gallery-parallax {
     position: absolute;
 
     z-index: 20;
@@ -76,6 +96,15 @@
     top: 21%;
     right: 4%;
 
+    width: 55%;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.slide-03__gallery {
     display: flex;
 
     align-items: flex-start;
@@ -83,7 +112,7 @@
     gap:
         clamp(16px, 1.6vw, 30px);
 
-    width: 55%;
+    width: 100%;
 }
 
 
