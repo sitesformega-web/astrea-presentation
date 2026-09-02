@@ -1,6 +1,6 @@
 /* =========================================================
    ASTREA™ PRESENTATION
-   Global System v0.2
+   Global System v0.3
    ========================================================= */
 
 
@@ -342,7 +342,7 @@ button {
 
 
 /* =========================================================
-   9. GRAPHIC PRIMITIVE
+   9. GRAPHIC SYSTEM
    ========================================================= */
 
 .slide-graphic {
@@ -384,7 +384,36 @@ button {
 
 
 /* =========================================================
-   10. STANDARD CONTENT TRANSITION
+   10. PARALLAX
+   ========================================================= */
+
+/*
+ * El wrapper controla exclusivamente el movimiento
+ * interactivo.
+ *
+ * Los elementos internos conservan libres sus propios
+ * transforms de reveal, entrada, salida, etc.
+ */
+
+.parallax-layer {
+    --parallax-x: 0px;
+    --parallax-y: 0px;
+
+    transform:
+        translate3d(
+            var(--parallax-x),
+            var(--parallax-y),
+            0
+        );
+
+    will-change: transform;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   11. STANDARD CONTENT TRANSITION
    ========================================================= */
 
 .slide.is-leaving .reveal {
@@ -402,14 +431,14 @@ button {
     opacity: 0;
 
     transition-delay: 0ms !important;
+
     transition-duration: 280ms;
 }
 
 
 /*
- * La escena entrante queda por encima de la saliente.
- * Como ambas comparten fondo, visualmente se percibe
- * como una recomposición del mismo espacio.
+ * El siguiente slide entra mientras el anterior
+ * todavía está terminando de salir.
  */
 
 .slide.is-entering {
@@ -420,7 +449,7 @@ button {
 
 
 /* =========================================================
-   11. HERO → SLIDE 02
+   12. HERO → SLIDE 02
    ========================================================= */
 
 .slide--01 {
@@ -450,7 +479,7 @@ button {
 
 
 /* =========================================================
-   12. ACCESSIBILITY
+   13. ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -479,30 +508,6 @@ button {
         transform: none;
     }
 
-}
-
-/* =========================================================
-   PARALLAX
-   ========================================================= */
-
-.parallax-layer {
-    --parallax-x: 0px;
-    --parallax-y: 0px;
-
-    transform:
-        translate3d(
-            var(--parallax-x),
-            var(--parallax-y),
-            0
-        );
-
-    will-change: transform;
-
-    pointer-events: none;
-}
-
-
-@media (prefers-reduced-motion: reduce) {
 
     .parallax-layer {
         transform: none !important;
