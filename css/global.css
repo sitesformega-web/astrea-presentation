@@ -1,0 +1,452 @@
+/* =========================================================
+   ASTREA™ PRESENTATION
+   Global System v0.2
+   ========================================================= */
+
+
+/* =========================================================
+   1. TOKENS
+   ========================================================= */
+
+:root {
+
+    /* Typography */
+
+    --font-family: "Quicksand", sans-serif;
+
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+
+    /* Colors */
+
+    --color-background: #f7f7f7;
+    --color-text: #3d3d3d;
+    --color-white: #ffffff;
+
+    --color-gradient-start: #f04136;
+    --color-gradient-end: #b52866;
+    --color-hover: #fa3125;
+
+
+    /* Motion */
+
+    --ease-out:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    --ease-slide:
+        cubic-bezier(0.76, 0, 0.24, 1);
+
+    --reveal-duration: 650ms;
+    --media-duration: 760ms;
+
+    --scene-duration: 760ms;
+
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+}
+
+
+html {
+    background: var(--color-background);
+}
+
+
+body {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-family);
+    font-weight: var(--font-regular);
+}
+
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   3. PRESENTATION STAGE
+   ========================================================= */
+
+.presentation {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   4. SLIDE
+   ========================================================= */
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background: var(--color-background);
+}
+
+
+.slide.is-active {
+    z-index: 20;
+
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+.slide.is-entering,
+.slide.is-leaving {
+    visibility: visible;
+}
+
+
+/* =========================================================
+   5. SHARED TYPOGRAPHY
+   ========================================================= */
+
+.presentation-title {
+    margin: 0;
+
+    font-size:
+        clamp(2.4rem, 3.4vw, 3.75rem);
+
+    font-weight: var(--font-semibold);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+}
+
+
+.presentation-paragraph {
+    max-width: 32rem;
+
+    margin: 0;
+
+    font-size:
+        clamp(1rem, 1.35vw, 1.3rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.5;
+}
+
+
+.presentation-paragraph strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   6. PRESENTATION BUTTON
+   ========================================================= */
+
+.presentation-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding: 0 20px;
+
+    border-radius: 999px;
+
+    color: var(--color-white);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 100%
+        );
+
+    background-size: 150% 100%;
+
+    font-size: 0.875rem;
+    font-weight: var(--font-semibold);
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-position 250ms ease,
+        transform 180ms ease;
+}
+
+
+.presentation-button:hover {
+    background-position: 100% 0;
+}
+
+
+.presentation-button:focus-visible {
+    outline: 2px solid var(--color-hover);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   7. GLOBAL NAVIGATOR
+   ========================================================= */
+
+.presentation-navigator {
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 4.2%;
+    bottom: 5.5%;
+
+    width: clamp(40px, 4vw, 54px);
+
+    padding: 0;
+
+    border: 0;
+
+    aspect-ratio: 1;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        opacity 220ms ease,
+        transform 180ms ease;
+}
+
+
+.presentation-navigator[hidden] {
+    display: none;
+}
+
+
+.presentation-navigator img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.presentation-navigator:hover {
+    transform: scale(1.07);
+}
+
+
+.presentation-navigator:focus-visible {
+    border-radius: 50%;
+
+    outline: 2px solid var(--color-hover);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   8. REVEAL SYSTEM
+   ========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+        opacity var(--reveal-duration) var(--ease-out),
+        transform var(--reveal-duration) var(--ease-out);
+
+    transition-delay:
+        var(--reveal-delay, 0ms);
+}
+
+
+.reveal--media {
+    transform: translateY(30px);
+
+    transition-duration:
+        var(--media-duration);
+}
+
+
+.slide.is-active .reveal,
+.slide.is-entering .reveal {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   9. GRAPHIC PRIMITIVE
+   ========================================================= */
+
+.slide-graphic {
+    position: absolute;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity 850ms var(--ease-out),
+        transform 850ms var(--ease-out);
+}
+
+
+.slide.is-active .slide-graphic,
+.slide.is-entering .slide-graphic {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   10. STANDARD CONTENT TRANSITION
+   ========================================================= */
+
+.slide.is-leaving .reveal {
+    opacity: 0;
+
+    transform: translateY(-12px);
+
+    transition-delay: 0ms;
+
+    transition-duration: 320ms;
+}
+
+
+.slide.is-leaving .slide-graphic {
+    opacity: 0;
+
+    transition-delay: 0ms;
+    transition-duration: 380ms;
+}
+
+
+/* =========================================================
+   11. HERO → SLIDE 02
+   ========================================================= */
+
+.slide--01 {
+    transform: translateY(0);
+}
+
+
+.slide--01.is-leaving-next {
+    z-index: 50;
+
+    transform: translateY(-100%);
+
+    transition:
+        transform
+        var(--scene-duration)
+        var(--ease-slide);
+}
+
+
+.slide--02.is-entering-from-hero {
+    z-index: 10;
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   12. ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    :root {
+        --reveal-duration: 1ms;
+        --media-duration: 1ms;
+        --scene-duration: 1ms;
+    }
+
+
+    .reveal,
+    .slide-graphic,
+    .slide,
+    .presentation-button,
+    .presentation-navigator {
+        transition-duration: 1ms !important;
+        transition-delay: 0ms !important;
+    }
+
+
+    .reveal,
+    .slide-graphic {
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
