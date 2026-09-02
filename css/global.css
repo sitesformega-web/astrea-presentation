@@ -388,16 +388,17 @@ button {
    ========================================================= */
 
 /*
- * El wrapper controla exclusivamente el movimiento
- * interactivo.
+ * El wrapper incorpora un pequeño bleed para evitar
+ * descubrir bordes durante el movimiento del parallax.
  *
- * Los elementos internos conservan libres sus propios
- * transforms de reveal, entrada, salida, etc.
+ * Los assets pueden permanecer exportados al ras.
  */
 
 .parallax-layer {
     --parallax-x: 0px;
     --parallax-y: 0px;
+
+    --parallax-bleed: 12px;
 
     transform:
         translate3d(
@@ -409,6 +410,32 @@ button {
     will-change: transform;
 
     pointer-events: none;
+}
+
+
+/*
+ * Compensación disponible para capas que necesiten
+ * cubrir el bleed generado por el movimiento.
+ */
+
+.parallax-layer > .slide-graphic {
+    margin:
+        calc(var(--parallax-bleed) * -1);
+
+    width:
+        calc(100% + (var(--parallax-bleed) * 2));
+
+    height:
+        calc(100% + (var(--parallax-bleed) * 2));
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .parallax-layer {
+        transform: none !important;
+    }
+
 }
 
 
