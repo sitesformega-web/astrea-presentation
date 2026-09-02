@@ -9,16 +9,37 @@
 
 
 /* =========================================================
-   GRAPHIC
-   1350 × 1080 reference layer
+   GRAPHIC — PARALLAX WRAPPER
    ========================================================= */
 
-.slide-02__graphic {
+/*
+ * El PNG fue compuesto sobre un lienzo 1350 × 1080.
+ *
+ * El wrapper conserva el anclaje al lateral derecho.
+ * El parallax sólo agrega un desplazamiento mínimo
+ * alrededor de esa posición.
+ */
+
+.slide-02__graphic-parallax {
+    position: absolute;
+
     z-index: 10;
 
     top: 0;
     right: 0;
 
+    height: 100%;
+}
+
+
+/* =========================================================
+   GRAPHIC
+   ========================================================= */
+
+.slide-02__graphic {
+    position: relative;
+
+    width: auto;
     height: 100%;
 }
 
@@ -63,10 +84,16 @@
 
 
 /* =========================================================
-   MEDIA
+   MEDIA — PARALLAX WRAPPER
    ========================================================= */
 
-.slide-02__media {
+/*
+ * El wrapper define la posición final de la imagen.
+ *
+ * El hijo conserva el reveal vertical.
+ */
+
+.slide-02__media-parallax {
     position: absolute;
 
     z-index: 20;
@@ -77,6 +104,18 @@
     width: min(25vw, 400px);
 
     aspect-ratio: 4 / 5;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.slide-02__media {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
 
     overflow: hidden;
 }
