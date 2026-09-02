@@ -51,13 +51,20 @@
    HEADER
    ========================================================= */
 
+/*
+ * El header permanece alineado con la columna izquierda.
+ *
+ * Lo compactamos ligeramente para liberar más superficie
+ * vertical para el preview.
+ */
+
 .slide-05__header {
     position: absolute;
 
     z-index: 30;
 
-    top: 15.5%;
-    left: 10.5%;
+    top: 13.5%;
+    left: 8.5%;
 }
 
 
@@ -65,7 +72,7 @@
     margin: 0;
 
     font-size:
-        clamp(1rem, 1.5vw, 1.45rem);
+        clamp(1rem, 1.35vw, 1.4rem);
 
     font-weight: var(--font-regular);
 
@@ -75,12 +82,12 @@
 
 .slide-05__title {
     margin:
-        clamp(1.25rem, 2vw, 1.9rem)
+        clamp(1.15rem, 1.7vw, 1.7rem)
         0
         0;
 
     font-size:
-        clamp(2.25rem, 3.3vw, 3.7rem);
+        clamp(2.2rem, 3vw, 3.45rem);
 
     font-weight: var(--font-semibold);
 
@@ -94,13 +101,20 @@
    MODULE SELECTOR
    ========================================================= */
 
+/*
+ * Columna izquierda.
+ *
+ * Su función es controlar el contenido, no competir
+ * visualmente con él.
+ */
+
 .slide-05__selector {
     position: absolute;
 
     z-index: 40;
 
-    top: 39%;
-    left: 11.5%;
+    top: 38%;
+    left: 8.5%;
 
     display: flex;
 
@@ -109,18 +123,11 @@
     align-items: stretch;
 
     width:
-        clamp(190px, 20.5vw, 300px);
+        clamp(190px, 18vw, 280px);
 
     gap: 5px;
 }
 
-
-/*
- * Todos los botones ocupan el mismo ancho.
- *
- * Esto permite que el estado activo cambie sin
- * desplazar visualmente la columna.
- */
 
 .slide-05__module-button {
     width: 100%;
@@ -135,16 +142,25 @@
    PREVIEW — PARALLAX WRAPPER
    ========================================================= */
 
+/*
+ * Columna derecha.
+ *
+ * El preview pasa a ser el protagonista del Slide 05.
+ *
+ * En un viewport de referencia 1920 × 1080 ocupa
+ * aproximadamente el 56% del ancho disponible.
+ */
+
 .slide-05__preview-parallax {
     position: absolute;
 
     z-index: 20;
 
-    top: 39%;
-    right: 11.8%;
+    top: 31%;
+    right: 5%;
 
     width:
-        min(43vw, 825px);
+        min(56vw, 1075px);
 
     aspect-ratio: 16 / 9;
 }
@@ -186,9 +202,9 @@
 }
 
 
-/*
- * Estado intermedio mientras cambiamos de módulo.
- */
+/* =========================================================
+   PREVIEW SWITCH
+   ========================================================= */
 
 .slide-05__preview.is-switching
 .slide-05__preview-image {
