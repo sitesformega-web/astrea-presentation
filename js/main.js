@@ -1,14 +1,21 @@
 /* =========================================================
    ASTREA™ PRESENTATION
-   Slide visibility
+   Build v0.1
    ========================================================= */
 
-const animatedSlides = document.querySelectorAll(".slide:not(.slide--hero)");
+
+/* =========================================================
+   SLIDE REVEALS
+   ========================================================= */
+
+const slides = document.querySelectorAll(".slide");
+
 
 const observerOptions = {
     root: null,
-    threshold: 0.35
+    threshold: 0.32
 };
+
 
 const slideObserver = new IntersectionObserver((entries) => {
 
@@ -18,12 +25,17 @@ const slideObserver = new IntersectionObserver((entries) => {
             return;
         }
 
+
         entry.target.classList.add("is-visible");
 
+
         /*
-         * La animación ocurre una sola vez.
-         * Una vez presentada la escena, dejamos de observarla.
+         * Cada escena ejecuta su reveal una sola vez.
+         *
+         * Las futuras transiciones de scroll se resolverán
+         * independientemente de este comportamiento.
          */
+
         slideObserver.unobserve(entry.target);
 
     });
@@ -31,6 +43,6 @@ const slideObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 
-animatedSlides.forEach((slide) => {
+slides.forEach((slide) => {
     slideObserver.observe(slide);
 });
