@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -12,46 +16,96 @@
 
     <title>ASTREA™</title>
 
+    <!-- Quicksand -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Global presentation system -->
+
+    <link
+        rel="stylesheet"
+        href="./css/global.css"
+    >
+
+
+    <!-- Slide modules -->
+
+    <link
+        rel="stylesheet"
+        href="./css/slides/slide-01.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/slides/slide-02.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/slides/slide-03.css"
+    >
+
 </head>
+
 
 <body>
 
-    <main class="presentation">
+    <!-- =====================================================
+         PRESENTATION STAGE
+    ====================================================== -->
 
-        <!-- ==================================================
+    <main
+        class="presentation"
+        aria-label="Presentación ASTREA"
+    >
+
+
+        <!-- =================================================
              SLIDE 01 — HERO
-        =================================================== -->
+        ================================================== -->
 
         <section
-            id="home"
-            class="slide slide--01"
+            id="slide-01"
+            class="slide slide--01 is-active"
+            data-slide="1"
             aria-labelledby="slide-01-title"
         >
 
-            <!-- Background -->
-            <div class="slide-01__background" aria-hidden="true"></div>
+            <div
+                class="slide-01__background"
+                aria-hidden="true"
+            ></div>
 
-            <!-- Lighting / readability overlay -->
-            <div class="slide-01__overlay" aria-hidden="true"></div>
 
-            <!-- Decorative graphic -->
-            <div class="slide-01__graphic" aria-hidden="true">
+            <div
+                class="slide-01__overlay"
+                aria-hidden="true"
+            ></div>
+
+
+            <div
+                class="slide-01__graphic"
+                aria-hidden="true"
+            >
                 <img
                     src="./assets/images/slide-01-element.png"
                     alt=""
                 >
             </div>
 
-            <!-- Left content -->
+
             <div class="slide-01__primary">
 
                 <img
@@ -60,6 +114,7 @@
                     src="./assets/images/ASTREA LOGO.png"
                     alt="ASTREA"
                 >
+
 
                 <h1
                     id="slide-01-title"
@@ -72,12 +127,13 @@
 
             </div>
 
-            <!-- Right content -->
+
             <p
                 class="slide-01__statement reveal"
                 style="--reveal-delay: 380ms"
             >
                 Plataforma de ventas<br>
+
                 <strong>
                     ligera, modular y<br>
                     adaptable.
@@ -87,25 +143,29 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =================================================
              SLIDE 02
-        =================================================== -->
+        ================================================== -->
 
         <section
             id="slide-02"
             class="slide slide--02"
+            data-slide="2"
             aria-labelledby="slide-02-title"
+            aria-hidden="true"
         >
 
-            <!-- Decorative graphic -->
-            <div class="slide-02__graphic slide-graphic" aria-hidden="true">
+            <div
+                class="slide-02__graphic slide-graphic"
+                aria-hidden="true"
+            >
                 <img
                     src="./assets/images/slide-02-element.png"
                     alt=""
                 >
             </div>
 
-            <!-- Content -->
+
             <div class="slide-02__content">
 
                 <h2
@@ -117,6 +177,7 @@
                     y vender.
                 </h2>
 
+
                 <p
                     class="presentation-paragraph reveal"
                     style="--reveal-delay: 220ms"
@@ -125,6 +186,7 @@
                     <strong>práctica y sencilla</strong>
                     para la organización de tu negocio.
                 </p>
+
 
                 <div
                     class="reveal"
@@ -140,7 +202,7 @@
 
             </div>
 
-            <!-- Media -->
+
             <div
                 class="slide-02__media reveal reveal--media"
                 style="--reveal-delay: 460ms"
@@ -151,52 +213,45 @@
                 >
             </div>
 
-            <!-- Navigator -->
-            <a
-                class="slide-navigator"
-                href="#home"
-                aria-label="Volver al inicio"
-            >
-                <img
-                    src="./assets/images/navigator.png"
-                    alt=""
-                >
-            </a>
-
         </section>
 
 
-        <!-- ==================================================
+        <!-- =================================================
              SLIDE 03
-        =================================================== -->
+        ================================================== -->
 
         <section
             id="slide-03"
             class="slide slide--03"
+            data-slide="3"
             aria-label="Plataforma de ventas adaptable"
+            aria-hidden="true"
         >
 
-            <!-- Decorative graphic -->
-            <div class="slide-03__graphic slide-graphic" aria-hidden="true">
+            <div
+                class="slide-03__graphic slide-graphic"
+                aria-hidden="true"
+            >
                 <img
                     src="./assets/images/slide-03-element.png"
                     alt=""
                 >
             </div>
 
-            <!-- Statement -->
+
             <p
                 class="slide-03__statement reveal"
                 style="--reveal-delay: 100ms"
             >
                 Plataforma de ventas<br>
+
                 <strong>
                     ligera, modular y<br>
                     adaptable.
                 </strong>
             </p>
 
-            <!-- Gallery -->
+
             <div class="slide-03__gallery">
 
                 <div
@@ -209,6 +264,7 @@
                     >
                 </div>
 
+
                 <div
                     class="slide-03__image slide-03__image--high reveal reveal--media"
                     style="--reveal-delay: 320ms"
@@ -218,6 +274,7 @@
                         alt=""
                     >
                 </div>
+
 
                 <div
                     class="slide-03__image slide-03__image--low reveal reveal--media"
@@ -231,23 +288,32 @@
 
             </div>
 
-            <!-- Navigator -->
-            <a
-                class="slide-navigator"
-                href="#home"
-                aria-label="Volver al inicio"
-            >
-                <img
-                    src="./assets/images/navigator.png"
-                    alt=""
-                >
-            </a>
-
         </section>
 
     </main>
 
-    <script src="./js/main.js"></script>
+
+    <!-- =====================================================
+         GLOBAL NAVIGATOR
+    ====================================================== -->
+
+    <button
+        class="presentation-navigator"
+        type="button"
+        aria-label="Volver al inicio"
+        hidden
+    >
+        <img
+            src="./assets/images/navigator.png"
+            alt=""
+        >
+    </button>
+
+
+    <!-- Scripts -->
+
+    <script src="./js/animations.js"></script>
+    <script src="./js/presentation.js"></script>
 
 </body>
 
