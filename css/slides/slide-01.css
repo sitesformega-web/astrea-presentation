@@ -17,7 +17,7 @@
 
     z-index: 0;
 
-    inset: 0;
+    inset: -2%;
 
     background-image:
         url("../../assets/images/slide-01-hero.png");
@@ -25,6 +25,18 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    transform: scale(1.035);
+
+    transition:
+        transform 1800ms var(--ease-out);
+
+    will-change: transform;
+}
+
+
+.slide--01.is-active .slide-01__background {
+    transform: scale(1);
 }
 
 
