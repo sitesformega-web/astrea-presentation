@@ -26,11 +26,11 @@ let isTransitioning = false;
  * afinar estos valores.
  */
 
-const STANDARD_EXIT_DURATION = 400;
-const STANDARD_ENTER_DELAY = 120;
-const STANDARD_TRANSITION_DURATION = 900;
+const STANDARD_EXIT_DURATION = 260;
+const STANDARD_OVERLAP_DELAY = 110;
+const STANDARD_TRANSITION_DURATION = 620;
 
-const HERO_TRANSITION_DURATION = 760;
+const HERO_TRANSITION_DURATION = 700;
 
 
 /* =========================================================
@@ -213,10 +213,22 @@ function transitionStandard(
     direction
 ) {
 
+    /*
+     * Comienza inmediatamente la salida
+     * de la escena actual.
+     */
+
     currentSlide.classList.add(
         "is-leaving"
     );
 
+
+    /*
+     * No esperamos a que termine.
+     *
+     * A los 110ms comenzamos a componer
+     * la siguiente escena.
+     */
 
     window.setTimeout(() => {
 
@@ -228,35 +240,41 @@ function transitionStandard(
             "aria-hidden"
         );
 
-
-        window.setTimeout(() => {
-
-            ASTREAAnimations.deactivateSlide(
-                currentSlide
-            );
+    }, STANDARD_OVERLAP_DELAY);
 
 
-            ASTREAAnimations.activateSlide(
-                targetSlide
-            );
+    /*
+     * Ambas escenas conviven brevemente.
+     *
+     * Una vez terminada la percepción de
+     * transición limpiamos los estados.
+     */
+
+    window.setTimeout(() => {
+
+        ASTREAAnimations.deactivateSlide(
+            currentSlide
+        );
 
 
-            currentSlide.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+        ASTREAAnimations.activateSlide(
+            targetSlide
+        );
 
 
-            finishTransition(
-                targetIndex
-            );
+        currentSlide.setAttribute(
+            "aria-hidden",
+            "true"
+        );
 
-        }, STANDARD_TRANSITION_DURATION - STANDARD_EXIT_DURATION);
 
-    }, STANDARD_EXIT_DURATION + STANDARD_ENTER_DELAY);
+        finishTransition(
+            targetIndex
+        );
+
+    }, STANDARD_TRANSITION_DURATION);
 
 }
-
 
 /* =========================================================
    FINISH
