@@ -26,6 +26,14 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+
+    /*
+     * Entrada de cámara:
+     *
+     * Comienza apenas ampliada y vuelve suavemente
+     * a su escala natural.
+     */
+
     transform: scale(1.035);
 
     transition:
@@ -35,7 +43,8 @@
 }
 
 
-.slide--01.is-active .slide-01__background {
+.slide--01.is-active
+.slide-01__background {
     transform: scale(1);
 }
 
@@ -74,15 +83,43 @@
 
 
 /* =========================================================
-   GRAPHIC
+   GRAPHIC — PARALLAX WRAPPER
    ========================================================= */
 
-.slide-01__graphic {
+/*
+ * El wrapper ocupa todo el Hero.
+ *
+ * Su única responsabilidad es recibir el micro-parallax.
+ */
+
+.slide-01__graphic-parallax {
     position: absolute;
 
     z-index: 3;
 
     inset: 0;
+}
+
+
+/* =========================================================
+   GRAPHIC
+   ========================================================= */
+
+/*
+ * La geometría del gráfico sigue perteneciendo
+ * al módulo Slide 01.
+ *
+ * La animación lateral + fade pertenece al sistema
+ * global .slide-graphic.
+ */
+
+.slide-01__graphic {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
 
     pointer-events: none;
 }
