@@ -1,0 +1,198 @@
+/* =========================================================
+   SLIDE 05 — MODULE PREVIEW
+   ========================================================= */
+
+
+.slide--05 {
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC — PARALLAX WRAPPER
+   ========================================================= */
+
+.slide-05__graphic-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC
+   ========================================================= */
+
+.slide-05__graphic {
+    position: relative;
+
+    width: auto;
+    height: 100%;
+}
+
+
+.slide-05__graphic img {
+    width: auto;
+    max-width: none;
+
+    height: 100%;
+
+    object-fit: contain;
+    object-position: left center;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.slide-05__header {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 15.5%;
+    left: 10.5%;
+}
+
+
+.slide-05__brand {
+    margin: 0;
+
+    font-size:
+        clamp(1rem, 1.5vw, 1.45rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1;
+}
+
+
+.slide-05__title {
+    margin:
+        clamp(1.25rem, 2vw, 1.9rem)
+        0
+        0;
+
+    font-size:
+        clamp(2.25rem, 3.3vw, 3.7rem);
+
+    font-weight: var(--font-semibold);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   MODULE SELECTOR
+   ========================================================= */
+
+.slide-05__selector {
+    position: absolute;
+
+    z-index: 40;
+
+    top: 39%;
+    left: 11.5%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width:
+        clamp(190px, 20.5vw, 300px);
+
+    gap: 5px;
+}
+
+
+/*
+ * Todos los botones ocupan el mismo ancho.
+ *
+ * Esto permite que el estado activo cambie sin
+ * desplazar visualmente la columna.
+ */
+
+.slide-05__module-button {
+    width: 100%;
+
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PREVIEW — PARALLAX WRAPPER
+   ========================================================= */
+
+.slide-05__preview-parallax {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 39%;
+    right: 11.8%;
+
+    width:
+        min(43vw, 825px);
+
+    aspect-ratio: 16 / 9;
+}
+
+
+/* =========================================================
+   PREVIEW
+   ========================================================= */
+
+.slide-05__preview {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #e8e8e8;
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+   ========================================================= */
+
+.slide-05__preview-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        opacity 180ms ease,
+        transform 280ms var(--ease-out);
+}
+
+
+/*
+ * Estado intermedio mientras cambiamos de módulo.
+ */
+
+.slide-05__preview.is-switching
+.slide-05__preview-image {
+    opacity: 0;
+
+    transform: scale(0.985);
+}
