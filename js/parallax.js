@@ -5,7 +5,7 @@
 
 
 /* =========================================================
-   CONFIG
+   CAPABILITY
    ========================================================= */
 
 const parallaxPointerQuery =
@@ -37,9 +37,10 @@ let pointerY = 0;
 function updateParallax() {
 
     /*
-     * Sólo trabajamos sobre el slide actualmente activo.
+     * El parallax sólo trabaja sobre el slide activo.
      *
-     * Los slides ocultos no reciben cálculos ni transforms.
+     * Esto evita realizar cálculos sobre escenas
+     * que actualmente no están visibles.
      */
 
     const activeSlide =
@@ -72,12 +73,19 @@ function updateParallax() {
 
 
         /*
-         * Movimiento máximo base:
+         * Movimiento máximo base.
          *
          * Horizontal: 10px
          * Vertical:    7px
          *
-         * data-parallax actúa como multiplicador.
+         * data-parallax funciona como multiplicador.
+         *
+         * Ejemplo:
+         *
+         * data-parallax="0.7"
+         *
+         * X máximo ≈ 7px
+         * Y máximo ≈ 4.9px
          */
 
         const movementX =
@@ -114,10 +122,18 @@ function updateParallax() {
 function handlePointerMove(event) {
 
     /*
-     * Normalización respecto al centro del viewport:
+     * Convertimos la posición del puntero
+     * a un rango relativo al centro:
      *
-     * X: -1 ← 0 → +1
-     * Y: -1 ↑ 0 ↓ +1
+     * X
+     * -1 = extremo izquierdo
+     *  0 = centro
+     * +1 = extremo derecho
+     *
+     * Y
+     * -1 = extremo superior
+     *  0 = centro
+     * +1 = extremo inferior
      */
 
     pointerX =
@@ -135,7 +151,7 @@ function handlePointerMove(event) {
 
 
     /*
-     * Un único cálculo por frame.
+     * Máximo una actualización por frame.
      */
 
     if (parallaxFrame !== null) {
@@ -156,6 +172,13 @@ function handlePointerMove(event) {
    ========================================================= */
 
 function initParallax() {
+
+    /*
+     * No activamos parallax:
+     *
+     * - en dispositivos sin puntero preciso;
+     * - cuando el usuario solicita movimiento reducido.
+     */
 
     if (
         !parallaxPointerQuery.matches ||
