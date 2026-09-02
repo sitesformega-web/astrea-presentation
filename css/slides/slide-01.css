@@ -37,7 +37,7 @@
     transform: scale(1.035);
 
     transition:
-        transform 100ms var(--ease-out);
+        transform 900ms var(--ease-out);
 
     will-change: transform;
 }
