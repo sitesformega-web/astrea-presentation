@@ -1,0 +1,211 @@
+/* =========================================================
+   SLIDE 04
+   ========================================================= */
+
+
+.slide--04 {
+    background: var(--color-background);
+}
+
+
+/* =========================================================
+   GRAPHIC — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * Asset compuesto sobre lienzo 1350 × 1080.
+ *
+ * Conservamos la convención de la presentación:
+ * gráfico anclado directamente al lateral correspondiente
+ * y ocupando la altura completa del viewport.
+ */
+
+.slide-04__graphic-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    right: 0;
+
+    height: 100%;
+}
+
+
+/* =========================================================
+   GRAPHIC
+   ========================================================= */
+
+.slide-04__graphic {
+    position: relative;
+
+    width: auto;
+    height: 100%;
+}
+
+
+.slide-04__graphic img {
+    width: auto;
+    max-width: none;
+
+    height: 100%;
+
+    object-fit: contain;
+    object-position: right center;
+}
+
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
+.slide-04__statement {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 17%;
+    left: 50%;
+
+    width: min(62vw, 900px);
+
+    margin: 0;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    font-size:
+        clamp(1.65rem, 2.35vw, 2.55rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.38;
+
+    letter-spacing: -0.02em;
+}
+
+
+.slide-04__statement strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/*
+ * IMPORTANTE:
+ *
+ * .reveal utiliza transform para su animación.
+ * Por eso evitamos depender del translateX(-50%)
+ * durante el estado final del reveal.
+ *
+ * Centramos el statement mediante un wrapper lógico
+ * equivalente usando márgenes calculados.
+ */
+
+.slide--04.is-active
+.slide-04__statement,
+.slide--04.is-entering
+.slide-04__statement {
+    transform: translateX(-50%) translateY(0);
+}
+
+
+.slide--04.is-leaving
+.slide-04__statement {
+    transform: translateX(-50%) translateY(-10px);
+}
+
+
+/* =========================================================
+   GALLERY — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * La galería ocupa el centro inferior.
+ *
+ * A diferencia de Slide 03:
+ *
+ * - es más grande;
+ * - está centrada;
+ * - las imágenes continúan fuera del viewport;
+ * - el corte inferior forma parte de la composición.
+ */
+
+.slide-04__gallery-parallax {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 50%;
+    bottom: -22%;
+
+    width: min(68vw, 1160px);
+
+    transform:
+        translateX(-50%)
+        translate3d(
+            var(--parallax-x),
+            var(--parallax-y),
+            0
+        );
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.slide-04__gallery {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap:
+        clamp(20px, 2vw, 38px);
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   GALLERY ITEMS
+   ========================================================= */
+
+.slide-04__image {
+    flex: 1 1 0;
+
+    min-width: 0;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+}
+
+
+/*
+ * Las imágenes laterales comienzan más abajo.
+ */
+
+.slide-04__image--low {
+    margin-top: 10%;
+}
+
+
+/*
+ * La imagen central define el punto alto
+ * de la composición.
+ */
+
+.slide-04__image--high {
+    margin-top: 0;
+}
+
+
+.slide-04__image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
