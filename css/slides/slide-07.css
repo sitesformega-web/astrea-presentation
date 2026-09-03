@@ -15,19 +15,14 @@
    ========================================================= */
 
 /*
- * IMPORTANTE
+ * Asset preparado sobre lienzo transparente 1350 × 1080.
  *
- * El asset fue preparado sobre un canvas 1350 × 1080.
+ * Conservamos la convención general:
  *
- * El wrapper debe conservar exactamente esa proporción.
- * Como la referencia trabaja a 1080px de alto:
- *
- * width = 125% de la altura
- *
- * Esto reproduce proporcionalmente:
- * 1350 / 1080 = 1.25
- *
- * El canvas completo queda anclado al borde derecho.
+ * - anclaje al lateral derecho;
+ * - altura completa;
+ * - geometría definida por el PNG;
+ * - wrapper responsable del parallax.
  */
 
 .slide-07__graphic-parallax {
@@ -38,10 +33,7 @@
     top: 0;
     right: 0;
 
-    width: 125vh;
     height: 100%;
-
-    pointer-events: none;
 }
 
 
@@ -50,20 +42,18 @@
    ========================================================= */
 
 .slide-07__graphic {
-    position: absolute;
+    position: relative;
 
-    inset: 0;
-
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 
 
 .slide-07__graphic img {
-    width: 100%;
-    height: 100%;
-
+    width: auto;
     max-width: none;
+
+    height: 100%;
 
     object-fit: contain;
     object-position: right center;
@@ -130,10 +120,11 @@
    ========================================================= */
 
 /*
- * El párrafo se posiciona en la zona roja útil
- * del gráfico, pero continúa siendo HTML independiente.
+ * El texto es HTML independiente del PNG.
  *
- * Así no acoplamos contenido y asset.
+ * Visualmente vive sobre la superficie roja,
+ * pero conserva semántica, accesibilidad y
+ * animación propias.
  */
 
 .slide-07__description {
@@ -145,7 +136,7 @@
     left: 56%;
 
     width:
-        min(37vw, 610px);
+        min(36vw, 590px);
 
     margin: 0;
 
