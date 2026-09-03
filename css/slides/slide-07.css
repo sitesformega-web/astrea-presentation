@@ -141,11 +141,11 @@
 
     z-index: 30;
 
-    top: 53%;
-    left: 56%;
+    top: 50%;
+    left: 59%;
 
     width:
-        min(37vw, 610px);
+        min(35vw, 570px);
 
     margin: 0;
 
