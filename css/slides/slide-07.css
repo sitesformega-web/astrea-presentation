@@ -1,0 +1,178 @@
+/* =========================================================
+   SLIDE 07 — LA VISIÓN
+   ========================================================= */
+
+
+.slide--07 {
+    background: var(--color-background);
+
+    color: var(--color-text);
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * IMPORTANTE
+ *
+ * El asset fue preparado sobre un canvas 1350 × 1080.
+ *
+ * El wrapper debe conservar exactamente esa proporción.
+ * Como la referencia trabaja a 1080px de alto:
+ *
+ * width = 125% de la altura
+ *
+ * Esto reproduce proporcionalmente:
+ * 1350 / 1080 = 1.25
+ *
+ * El canvas completo queda anclado al borde derecho.
+ */
+
+.slide-07__graphic-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    right: 0;
+
+    width: 125vh;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC
+   ========================================================= */
+
+.slide-07__graphic {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide-07__graphic img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+    object-position: right center;
+}
+
+
+/* =========================================================
+   EYEBROW — LA VISIÓN
+   ========================================================= */
+
+.slide-07__eyebrow {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 15.5%;
+    left: 10.5%;
+
+    margin: 0;
+
+    font-size:
+        clamp(1rem, 1.45vw, 1.4rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   MAIN STATEMENT
+   ========================================================= */
+
+.slide-07__statement {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 38%;
+    left: 10.5%;
+
+    margin: 0;
+
+    font-size:
+        clamp(2.6rem, 4vw, 4.35rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+}
+
+
+.slide-07__statement strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   SUPPORTING STATEMENT
+   ========================================================= */
+
+/*
+ * El párrafo se posiciona en la zona roja útil
+ * del gráfico, pero continúa siendo HTML independiente.
+ *
+ * Así no acoplamos contenido y asset.
+ */
+
+.slide-07__description {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 53%;
+    left: 56%;
+
+    width:
+        min(37vw, 610px);
+
+    margin: 0;
+
+    color: var(--color-white);
+
+    font-size:
+        clamp(1rem, 1.45vw, 1.45rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.32;
+}
+
+
+.slide-07__description strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .slide-07__graphic-parallax {
+        transform: none !important;
+    }
+
+}
