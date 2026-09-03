@@ -1,0 +1,217 @@
+/* =========================================================
+   SLIDE 08 — PROTOTIPO FUNCIONAL
+   ========================================================= */
+
+
+.slide--08 {
+    background: var(--color-background);
+
+    color: var(--color-text);
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * Reutilizamos slide-01-element.png como asset,
+ * pero NO reutilizamos la geometría del Hero 01.
+ *
+ * Este wrapper pertenece exclusivamente a Slide 08.
+ *
+ * El gráfico se extiende más allá del viewport para
+ * producir el arco magenta inferior/derecho de la
+ * composición de referencia.
+ */
+
+.slide-08__graphic-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE GRAPHIC
+   ========================================================= */
+
+.slide-08__graphic {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide-08__graphic img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+    object-position: right center;
+}
+
+
+/* =========================================================
+   MEDIA — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * La caja queda definida desde ahora como 4:5.
+ *
+ * Cuando llegue la imagen final solamente será necesario
+ * reemplazar el src del <img>.
+ */
+
+.slide-08__media-parallax {
+    position: absolute;
+
+    z-index: 20;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+
+    aspect-ratio: 4 / 5;
+}
+
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.slide-08__media {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.slide-08__media img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.slide-08__content {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 15.5%;
+    left: 50.7%;
+
+    width:
+        min(40vw, 650px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.slide-08__brand {
+    margin: 0;
+
+    font-size:
+        clamp(1.15rem, 1.55vw, 1.55rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.slide-08__title {
+    margin:
+        clamp(1.45rem, 2.2vw, 2.2rem)
+        0
+        0;
+
+    font-size:
+        clamp(2.45rem, 3.55vw, 4rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.025em;
+}
+
+
+.slide-08__title strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.slide-08__description {
+    margin:
+        clamp(2rem, 3vw, 3.2rem)
+        0
+        0;
+
+    width:
+        min(34vw, 550px);
+
+    font-size:
+        clamp(1.05rem, 1.5vw, 1.5rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1.34;
+}
+
+
+.slide-08__description strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .slide-08__graphic-parallax,
+    .slide-08__media-parallax {
+        transform: none !important;
+    }
+
+}
