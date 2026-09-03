@@ -77,6 +77,11 @@
         href="./css/slides/slide-05.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="./css/slides/slide-06.css"
+    >
+
 </head>
 
 
@@ -460,8 +465,6 @@
             aria-hidden="true"
         >
 
-            <!-- Decorative graphic -->
-
             <div
                 class="slide-05__graphic-parallax parallax-layer"
                 data-parallax="0.8"
@@ -483,8 +486,6 @@
             </div>
 
 
-            <!-- Header -->
-
             <div class="slide-05__header">
 
                 <p
@@ -505,8 +506,6 @@
 
             </div>
 
-
-            <!-- Module selector -->
 
             <div
                 class="slide-05__selector reveal"
@@ -582,8 +581,6 @@
             </div>
 
 
-            <!-- Preview -->
-
             <div
                 class="slide-05__preview-parallax parallax-layer"
                 data-parallax="0.22"
@@ -606,6 +603,144 @@
                 </div>
 
             </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SLIDE 06 — DUAL HERO
+        ================================================== -->
+
+        <section
+            id="slide-06"
+            class="slide slide--06"
+            data-slide="6"
+            data-dual-hero-state="offer"
+            aria-labelledby="slide-06-title"
+            aria-hidden="true"
+        >
+
+            <!-- =============================================
+                 BACKGROUND LAYERS
+            ============================================== -->
+
+            <div
+                class="slide-06__backgrounds"
+                aria-hidden="true"
+            >
+
+                <div
+                    class="slide-06__background slide-06__background--offer is-active"
+                ></div>
+
+
+                <div
+                    class="slide-06__background slide-06__background--admin"
+                ></div>
+
+            </div>
+
+
+            <!-- =============================================
+                 LIGHTING OVERLAY
+            ============================================== -->
+
+            <div
+                class="slide-06__overlay"
+                aria-hidden="true"
+            ></div>
+
+
+            <!-- =============================================
+                 CONTENT
+            ============================================== -->
+
+            <div class="slide-06__content">
+
+                <p
+                    class="slide-06__brand reveal"
+                    style="--reveal-delay: 90ms"
+                >
+                    ASTREA™
+                </p>
+
+
+                <h2
+                    id="slide-06-title"
+                    class="slide-06__title reveal"
+                    style="--reveal-delay: 160ms"
+                >
+                    Una plataforma para<br>
+                    <strong>dos soluciones.</strong>
+                </h2>
+
+
+                <div
+                    class="slide-06__description-wrap reveal"
+                    style="--reveal-delay: 250ms"
+                >
+
+                    <p
+                        class="slide-06__description"
+                        aria-live="polite"
+                    >
+                        Tu negocio con una vitrina amigable<br>
+                        y adaptable, enfocada a impulsar<br>
+                        tus oportunidades comerciales.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================================
+                     SOLUTION SELECTOR
+                ========================================== -->
+
+                <div
+                    class="slide-06__selector reveal"
+                    style="--reveal-delay: 340ms"
+                    role="tablist"
+                    aria-label="Soluciones ASTREA"
+                >
+
+                    <button
+                        class="presentation-button slide-06__solution-button is-active"
+                        type="button"
+                        role="tab"
+                        id="slide-06-tab-offer"
+                        data-hero-mode="offer"
+                        aria-selected="true"
+                        aria-controls="slide-06-description"
+                    >
+                        OFRECÉ
+                    </button>
+
+
+                    <button
+                        class="presentation-button slide-06__solution-button"
+                        type="button"
+                        role="tab"
+                        id="slide-06-tab-admin"
+                        data-hero-mode="admin"
+                        aria-selected="false"
+                        aria-controls="slide-06-description"
+                    >
+                        ADMINISTRÁ
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Accessible semantic panel -->
+
+            <div
+                id="slide-06-description"
+                class="slide-06__semantic-panel"
+                role="tabpanel"
+                aria-labelledby="slide-06-tab-offer"
+            ></div>
 
         </section>
 
@@ -638,6 +773,7 @@
     <script src="./js/animations.js"></script>
     <script src="./js/parallax.js"></script>
     <script src="./js/module-preview.js"></script>
+    <script src="./js/dual-hero.js"></script>
     <script src="./js/presentation.js"></script>
 
 </body>
