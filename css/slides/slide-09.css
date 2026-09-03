@@ -7,9 +7,8 @@
     /*
      * Fondo generado íntegramente con CSS.
      *
-     * No necesitamos rasterizar el gradiente:
-     * conserva resolución perfecta y nos permitirá
-     * recalibrarlo fácilmente durante responsive.
+     * Gradiente horizontal:
+     * rojo/coral → magenta.
      */
 
     background:
@@ -29,10 +28,14 @@
    ========================================================= */
 
 /*
- * Elemento superior izquierdo.
+ * Elemento decorativo superior izquierdo.
  *
- * El wrapper posee la geometría de escena.
- * El hijo conserva exclusivamente la animación de entrada.
+ * El wrapper controla:
+ * - posición;
+ * - escala;
+ * - parallax.
+ *
+ * El gráfico interior conserva la animación de entrada.
  */
 
 .slide-09__graphic-01-parallax {
@@ -43,8 +46,8 @@
     top: 0;
     left: 0;
 
-    width: 27%;
-    height: 40%;
+    width: 34%;
+    height: 46%;
 
     pointer-events: none;
 }
@@ -82,7 +85,11 @@
    ========================================================= */
 
 /*
- * Elemento lateral derecho.
+ * Elemento decorativo lateral derecho.
+ *
+ * Tiene mayor presencia que el gráfico izquierdo.
+ * Parte de su geometría queda intencionalmente
+ * fuera del viewport.
  */
 
 .slide-09__graphic-02-parallax {
@@ -93,7 +100,7 @@
     top: 0;
     right: 0;
 
-    width: 27%;
+    width: 36%;
     height: 100%;
 
     pointer-events: none;
@@ -115,7 +122,12 @@
 
 
 .slide-09__graphic--02 img {
-    width: 100%;
+    position: absolute;
+
+    top: 0;
+    right: -14%;
+
+    width: auto;
     height: 100%;
 
     max-width: none;
@@ -132,8 +144,10 @@
    ========================================================= */
 
 /*
- * El cierre se concentra deliberadamente en el centro
- * visual disponible entre ambos elementos decorativos.
+ * Mensaje final centrado dentro del espacio visual
+ * disponible entre los elementos decorativos.
+ *
+ * El contenido permanece estático después del reveal.
  */
 
 .slide-09__content {
@@ -232,10 +246,8 @@
 /*
  * Variante contextual de PresentationButton v1.0.
  *
- * NO modificamos el componente global.
- *
- * El cierre utiliza superficie blanca para aumentar
- * contraste contra el gradiente.
+ * No modifica el componente global.
+ * Esta variante pertenece únicamente al closing.
  */
 
 .slide-09__cta {
@@ -252,11 +264,9 @@
 }
 
 
-/*
- * Sobrescribimos explícitamente el comportamiento default
- * del PresentationButton porque esta variante vive
- * permanentemente sobre una superficie de color.
- */
+/* =========================================================
+   CTA — HOVER
+   ========================================================= */
 
 .slide-09__cta:hover {
     background: #ffffff;
