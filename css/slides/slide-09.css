@@ -1,0 +1,279 @@
+/* =========================================================
+   SLIDE 09 — CLOSING
+   ========================================================= */
+
+
+.slide--09 {
+    /*
+     * Fondo generado íntegramente con CSS.
+     *
+     * No necesitamos rasterizar el gradiente:
+     * conserva resolución perfecta y nos permitirá
+     * recalibrarlo fácilmente durante responsive.
+     */
+
+    background:
+        linear-gradient(
+            105deg,
+            #ff3028 0%,
+            #ed293f 48%,
+            #c51c64 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GRAPHIC 01 — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * Elemento superior izquierdo.
+ *
+ * El wrapper posee la geometría de escena.
+ * El hijo conserva exclusivamente la animación de entrada.
+ */
+
+.slide-09__graphic-01-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    left: 0;
+
+    width: 27%;
+    height: 40%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRAPHIC 01
+   ========================================================= */
+
+.slide-09__graphic--01 {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide-09__graphic--01 img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: left top;
+}
+
+
+/* =========================================================
+   GRAPHIC 02 — PARALLAX WRAPPER
+   ========================================================= */
+
+/*
+ * Elemento lateral derecho.
+ */
+
+.slide-09__graphic-02-parallax {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+    right: 0;
+
+    width: 27%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRAPHIC 02
+   ========================================================= */
+
+.slide-09__graphic--02 {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide-09__graphic--02 img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: right center;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+/*
+ * El cierre se concentra deliberadamente en el centro
+ * visual disponible entre ambos elementos decorativos.
+ */
+
+.slide-09__content {
+    position: absolute;
+
+    z-index: 30;
+
+    top: 27%;
+    left: 50%;
+
+    width:
+        min(44vw, 700px);
+
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.slide-09__intro {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(2rem, 3vw, 3.3rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.slide-09__title {
+    margin:
+        clamp(0.65rem, 1.1vw, 1rem)
+        0
+        0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(3.2rem, 5vw, 5.6rem);
+
+    font-weight: var(--font-semibold);
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.slide-09__brand {
+    margin:
+        clamp(1rem, 1.6vw, 1.6rem)
+        0
+        0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(2rem, 3vw, 3.3rem);
+
+    font-weight: var(--font-regular);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.slide-09__action {
+    margin-top:
+        clamp(2.8rem, 4.5vw, 4.8rem);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+/*
+ * Variante contextual de PresentationButton v1.0.
+ *
+ * NO modificamos el componente global.
+ *
+ * El cierre utiliza superficie blanca para aumentar
+ * contraste contra el gradiente.
+ */
+
+.slide-09__cta {
+    min-width:
+        clamp(180px, 18vw, 270px);
+
+    border: 0;
+
+    background: #ffffff;
+
+    color: #fa3125;
+
+    cursor: pointer;
+}
+
+
+/*
+ * Sobrescribimos explícitamente el comportamiento default
+ * del PresentationButton porque esta variante vive
+ * permanentemente sobre una superficie de color.
+ */
+
+.slide-09__cta:hover {
+    background: #ffffff;
+
+    color: #c51c64;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .slide-09__graphic-01-parallax,
+    .slide-09__graphic-02-parallax {
+        transform: none !important;
+    }
+
+}
